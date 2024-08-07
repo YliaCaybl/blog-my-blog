@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= post.title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    <h2>Комментарии</h2>
+    <% comments.forEach(comment => { %>
+        <p><%= comment.comment %> - Пользователь <%= comment.user_id %></p>
+    <% }) %>
+    <h3>Добавить комментарий</h3>
+    <form action="/comment" method="post">
+        <input type="hidden" name="postId" value="<%= post.id %>">
+        <textarea name="comment" required></textarea><br>
+        <button type="submit">Комментировать</button>
+    </form>
+    <a href="/home">На главную</a>
+</body>
+</html>

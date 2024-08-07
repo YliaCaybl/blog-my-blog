@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Блоги других пользователей</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1>Блоги других пользователей</h1>
+    <% users.forEach(user => { %>
+        <h2>Блог пользователя <%= user.username %></h2>
+        <a href="/user/<%= user.id %>/posts">Посмотреть посты</a>
+    <% }) %>
+    <a href="/home">На главную</a>
+</body>
+</html>

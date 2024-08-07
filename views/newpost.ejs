@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать новый пост</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1>Создать новый пост</h1>
+    <form action="/newpost" method="post">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required><br>
+        <label for="content">Содержание:</label>
+        <textarea id="content" name="content" required></textarea><br>
+        <label for="private">Приватный:</label>
+        <input type="checkbox" id="private" name="private"><br>
+        <button type="submit">Опубликовать</button>
+    </form>
+    <a href="/home">На главную</a>
+</body>
+</html>

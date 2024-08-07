@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой блог</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1>Мой блог</h1>
+    <% posts.forEach(post => { %>
+        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+        <form action="/deletepost" method="post">
+            <input type="hidden" name="postId" value="<%= post.id %>">
+            <button type="submit">Удалить</button>
+        </form>
+    <% }) %>
+    <a href="/home">На главную</a>
+</body>
+</html>

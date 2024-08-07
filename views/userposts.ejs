@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Посты пользователя <%= username %></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1>Посты пользователя <%= username %></h1>
+    <% if (posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+            <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+            <p><%= post.content.substring(0, 100) %>...</p>
+        <% }) %>
+    <% } else { %>
+        <p>У этого пользователя нет постов.</p>
+    <% } %>
+    <a href="/home">На главную</a>
+</body>
+</html>
